@@ -15,22 +15,19 @@ export default class Navbar extends Component {
   <div className="collapse navbar-collapse" id="navbarSupportedContent">
     <ul className="navbar-nav mr-auto">
       <li className="nav-item active">
-        <Link className="nav-link" to="/">Home <span className="sr-only"></span></Link>
+        <Link className="nav-link" to="/">Exercises List <span className="sr-only"></span></Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/">Link</Link>
+        <Link className="nav-link" to="/edit/:id">Edit Exercises</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/">Link</Link>
+        <Link className="nav-link" to="/create">Create Exercise</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/">Link</Link>
-      </li>
-      <li className="nav-item">
-        <Link className="nav-link" to="/">Link</Link>
+        <Link className="nav-link" to="/user">Create User</Link>
       </li>
     </ul>
-    <form className="form-inline my-2 my-lg-0">
+    <form className="form-inline my-2 my-lg-0 position-absolute end-0">
       <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
       <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
