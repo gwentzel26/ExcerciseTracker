@@ -15,13 +15,16 @@ function App() {
     <>
     
     <BrowserRouter>
+    
     <Navbar />
+    <div className='container'>
     <Routes> 
         <Route path='/' element = {<ExercisesList/>} />
         <Route path='/edit/:id' element = {<EditExercise/>} />
         <Route path='/create' element = {<CreateExercise/>} />
         <Route path='/user' element = {<CreateUser/>} />
     </Routes> 
+    </div>
     </BrowserRouter>
     </>
   );

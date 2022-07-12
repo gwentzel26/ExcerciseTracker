@@ -1,5 +1,7 @@
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 export default class CreateExercise extends Component {
     constructor(props) {
@@ -44,7 +46,7 @@ export default class CreateExercise extends Component {
     }
     onChangeDate(date) {
         this.setState({
-            date: e.target.value
+            date: date
         })
     }
 
@@ -56,7 +58,7 @@ export default class CreateExercise extends Component {
            duration: this.state.duration,
            date: this.state.date
         }
-
+        
         console.log(exercise);
         window.location = '/';  
     }
@@ -101,16 +103,22 @@ export default class CreateExercise extends Component {
                     />
                 </div>
                 <div className="form-group">
-                    <label>Date </label>
-                    <input type="text"
-                           required
-                           className="form-control"
-                           value={this.state.description}
-                           onChange = {this.onChangeDescription}
-                    />
+                    <label>Date: </label>
+                    <div>
+                        <DatePicker
+                            selected={this.state.date}
+                            onChange={this.onChangeDate}
+                        />
+                    </div>   
                 </div>
-
-
+                <div className="form-group">
+                    <input type="submit"
+                            value="Create Exercise Log"
+                            className="btn btn-primary"
+                            
+                        />
+                
+                </div>
             </form>
         </div>
         )
